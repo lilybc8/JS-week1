@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- Back Button-->
+<button onclick="goBack()">Go Back</button>
+<br>
+<!-- Clock -->
+<p id="clock"></p>
+<br>
+<!-- List -->
+
+<form>
+  <fieldset>
+    <legend>To Do List:</legend>
+    <br>
+    <input type="text" id="list" name="list" placeholder="Add an item"/>
+    <br><br>
+    <input type="button" onclick="makeList()" value="Submit"/>
+
+  </fieldset>
+</form> 
+<br><br>
+<il id="myList"></il>
+
+
+<script>
+/*Back Button*/
+console.log(window.history)
+
+if(window.history.length >= 1){
+
+function goBack() {
+    window.history.back();
+}
+}
+//	
+
+
+/*Clock on Screen*/
+var secondCounter = setInterval(contClock, 1000);
+
+function contClock(){
+	// variable with the date and time
+	var theDate = new Date();
+	// variable with the time but without date and timezone
+	var theTime = theDate.toLocaleTimeString();
+	// put the information into the html where id = clock
+	document.getElementById("clock").innerHTML = theTime;
+}
+
+
+function listCreator() {
+    var infoGather = document.getElementById("list");
+    var space = "";
+    var i;
+    for (i = 0; i < infoGather.length ;i++) {
+        space += infoGather.elements[i].value + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+//
+
+/*The List*/
+var theList = document.getElementById("myList");
+
+function makeList(){
+	var list = document.getElementById("list").value;
+	var numbers = document.createElement("li");
+	numbers.appendChild(document.createTextNode(list));
+	myList.appendChild(numbers);
+}
+
+</script> 
+</body>
+</html>

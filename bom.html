@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+// centered popup 
+function popup() {
+	window.open("https://www.google.com","_blank","width = 100, height = 100, top = 300, left = 600");
+}
+
+popup();
+
+// log if popup window is opened or closed
+
+// interval clock every 5 seconds
+var secondCounter = setInterval(contClock, 5000);
+
+function contClock(){
+	// variable with the date and time
+	var theDate = new Date();
+	// variable with the time but without date and timezone
+	var theTime = theDate.toLocaleTimeString();
+	// put the information into console log
+	console.log(theTime);
+}
+
+// Query user for age & redirect
+var age = prompt("How old are you?");
+
+if(age >= 21){
+	window.open("https://www.google.com/#q=i+hate+beer");
+} else{
+		window.open("https://www.disney.com");
+}
+
+// Mobile redirect script
+if(window.screen.availWidth <= 480 || window.screen.availHeight <= 800){
+	var mobileCon = prompt("Would you like to go to the mobile website? (y/n)");
+}
+	if (mobileCon == 'y') {
+		window.open("https://www.google.com/mobile");
+	} else if (mobile == n) {
+		window.open("https://www.google.com");
+	}
+
+
+</script>
+</body>
+</html>
